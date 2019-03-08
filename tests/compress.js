@@ -9,6 +9,6 @@ const archive = archiver('zip', {
     zlib: { level: 9 } // Sets the compression level.
 });
 archive.pipe(output);
-archive.glob('*', {"ignore": ['node_modules', 'tests', 'README.md']});
+archive.glob('*', {"ignore": ['node_modules', 'tests', 'README.md', 'LICENSE']});
 archive.finalize();
 fs.moveSync(orig, dest, { overwrite: true });
